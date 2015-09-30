@@ -1,6 +1,6 @@
 # WaterCycle
 
-### This will be a simple collection of aws cloud formation scripts to easily launch 
+### Simple collection of aws cloud formation scripts to easily manage template deployment.
 
 Usage: `createStack configuration.json`
 
