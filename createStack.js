@@ -21,8 +21,14 @@ try {
 	process.exit(-1)
 }
 
-if (!configFile.templateFileName || configFile.stackName)
-	var templateBody = fs.readFileSync(configFile.templateFileName);
+if (!configFile.templateFileName || !configFile.stackName) {
+	console.error("missing required parameters");
+	process.exit(-1);
+}
+
+//resolve the template filename based on the directory where the config was.
+var resolvedTemplateFilename = path.resolve(path.dirname(options[0]), configFile.templateFileName);
+var templateBody = fs.readFileSync(resolvedTemplateFilename);
 
 var stack = {
 	"StackName": configFile.stackName,
