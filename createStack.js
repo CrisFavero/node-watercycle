@@ -2,6 +2,7 @@
 /**
  * Created by cmfavero on 9/29/15.
  */
+ "use strict";
 var fs = require('fs');
 var path = require('path');
 var AWS = require('aws-sdk');
@@ -11,14 +12,14 @@ var options = process.argv.slice(2);
 
 if (options.length !== 1) {
 	console.error("Expecting only a json configuration file name");
-	process.exit(-1)
+	process.exit(-1);
 }
 
 try {
 	var configFile = require(path.resolve(options[0]));
 } catch (e) {
 	console.error("could not load json file", e.stack || e);
-	process.exit(-1)
+	process.exit(-1);
 }
 
 if (!configFile.templateFileName || !configFile.stackName) {
