@@ -3,7 +3,8 @@
   "description": "Simple collection of aws cloud formation scripts to easily manage template deployment.",
   "version": "0.0.1",
   "bin": {
-    "wc-createstack": "./createStack.js"
+    "wc-createstack": "./createStack.js",
+    "wc-updatestack": "./updateStack.js"
   },
   "repository": "marioatlp/node-watercycle",
   "author": "cris@crisfavero.com",
